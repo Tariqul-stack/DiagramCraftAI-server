@@ -5,6 +5,7 @@ import morgan from 'morgan';
 import { env } from './config/env';
 import authRouter from './routes/auth.routes';
 import diagramRouter from './routes/diagram.routes';
+import aiRouter from './routes/ai.routes';
 
 const app = express();
 
@@ -17,5 +18,6 @@ app.use(express.json());
 // Routes
 app.use('/api/auth', authRouter);
 app.use('/api/diagrams', diagramRouter);
+app.use('/api/ai', aiRouter);
 
 export default app;
