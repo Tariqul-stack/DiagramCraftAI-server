@@ -7,9 +7,9 @@ const validate =
     try {
       schema.parse(req.body);
       next();
-    } catch (err) {
+    } catch (err: any) {
       if (err instanceof ZodError) {
-        const messages = err.errors.map((e) => ({
+        const messages = (err as any).errors.map((e: any) => ({
           field: e.path.join('.'),
           message: e.message,
         }));
