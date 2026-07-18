@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { z } from 'zod';
 import validate from '../middleware/validate.middleware';
 import protect from '../middleware/auth.middleware';
-import { register, login, getMe } from '../controllers/auth.controller';
+import { register, login, getMe, googleLogin } from '../controllers/auth.controller';
 
 const router = Router();
 
@@ -21,6 +21,7 @@ const loginSchema = z.object({
 // Routes
 router.post('/register', validate(registerSchema), register);
 router.post('/login', validate(loginSchema), login);
+router.post('/google', googleLogin);
 router.get('/me', protect, getMe);
 
 export default router;

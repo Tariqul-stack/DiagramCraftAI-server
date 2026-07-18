@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
 const envSchema = z.object({
-  PORT: z.string().default('5000'),
+  PORT: z.string().default('8000'),
   MONGODB_URI: z.string(),
   JWT_SECRET: z.string(),
   GROQ_API_KEY: z.string(),
