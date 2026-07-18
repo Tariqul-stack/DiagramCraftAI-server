@@ -6,6 +6,7 @@ import { env } from './config/env';
 import authRouter from './routes/auth.routes';
 import diagramRouter from './routes/diagram.routes';
 import aiRouter from './routes/ai.routes';
+import contactRouter from './routes/contact.routes';
 
 const app = express();
 
@@ -19,5 +20,6 @@ app.use(express.json());
 app.use('/api/auth', authRouter);
 app.use('/api/diagrams', diagramRouter);
 app.use('/api/ai', aiRouter);
+app.use('/api/contact', contactRouter);
 
 export default app;
